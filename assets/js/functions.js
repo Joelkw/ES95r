@@ -5,9 +5,22 @@ function nav(){
 	$('.nav-toggle').click(function(){
 		
 		$('.nav').toggleClass('open');
+		console.log("HI");
 		
 	});
 	
+}
+
+function hovernav() {
+	$('.nav-toggle').hover(function(){
+		
+		$('.nav').toggleClass('open');
+		console.log("HI");
+		
+	}, function(){
+
+		$('.nav').toggleClass('open');	
+	});
 }
 
 function smoothScroll(){
@@ -156,6 +169,8 @@ function threeSlider(){
 }
 
 nav();
+
+hovernav();
 
 smoothScroll();
 
