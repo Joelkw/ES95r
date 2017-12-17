@@ -25,12 +25,32 @@ FIRST SECTION
   <path d="M65.5664062,34.2070312 C107.597656,89.0507812 144.421875,12.2773438 144.421875,12.2773438 L154.886719,159.097656 L21.2265625,124.054687 L305.042969,116.410156 L33.0390625,116.410156 L173.6875,62.21875 L182.371094,177.550781 L111.15625,69.1640625" id="Path-4" stroke="#000000" stroke-width="6"></path>
 	<!-- <path d="M352.5,7487.4C351.4,7484.3,0,5858.4,0,5856.4c0-0.7,74-0.9,164.1-0.7l164.3,0.7l31.6,174.6l31.6,174.6h106.9h106.9l24.4-127.7c13.5-70.3,28.6-149.1,33.6-175l9.2-47.6h163.5H1000l-1.1,4.8c-2.8,11.1-350.7,1626.1-350.7,1627.9c0,1.1-61.1,2-147.3,2C384.8,7490,353.1,7489.3,352.5,7487.4z M542.3,6713.5c22.3-163.5,40.4-298.8,40.4-300.5c0-2.8-10.7-3.3-84-3.3h-84.2l1.3,7.2c2.2,12.7,84,590.8,84,593.4C499.8,7022.7,507,6971.7,542.3,6713.5z"/> -->
 </g>
-</svg>
+</svg> 
+<style>
+ #hero header {
+   height: 10px;
+    margin-bottom: -70; 
+    margin-top: -20px;
+    position:fixed !important;
+}
+   
+</style>
       <header>
+        <style>
+        .nav-toggle{  
+          background-color: #cccccc;
+          padding: 5px 5px 5px 20px;
+          opacity: 0.6;
+        }
+        #navnav {
+          margin-top: -37px;
+        }
+           
+      </style>
         <div class="nav-toggle">
           <p>Menu</p><span></span>
         </div>
-        <ul class="nav">
+        <ul id="navnav" class="nav">
           <li><a href="#about">Why</a></li>
           <li><a href="#featured">Who</a></li>
           <li><a href="#speakers">Speakers</a></li>
@@ -1205,23 +1225,45 @@ for (i = 0; i < acc.length; i++) {
   function hovernav() {
   $('.nav-toggle').hover(function(){
     
-    $('.nav').toggleClass('open');
-    console.log("HI");
+    if($('#navnav').hasClass('open')) {
+      // $('.nav').toggleClass('open');
+    } else {
+       $('.nav').toggleClass('open');
+    }
     
   }, function(){
 
-    $('.nav').toggleClass('open');  
+    function toggle() {
+          $('.nav').toggleClass('open');  
+    }
+    window.setTimeout(toggle,200);
   });
 }
 
+// this one is for the actual bar
 function hoverhover() {
-$('.nav-open').hover(function(){
-    
-    // $('.nav').toggleClass('open');
+  $('.nav').hover(function(){
+
+    if($('#navnav').hasClass('open')) {
+      // keep open
+      function toggle() {
+         $('.nav').toggleClass('open'); 
+      }
+      window.setTimeout(toggle,200);
+    }
+    // ('.nav').toggleClass('open');
     
   }, function(){
-
-    $('.nav').toggleClass('open');  
+    function toggle() {
+         $('.nav').toggleClass('open'); 
+      }
+      // window.setTimeout(toggle,00);
+      if($('#navnav').hasClass('open')) {
+      // close
+        toggle();
+      }
+      // toggle()
+    // $('.nav').toggleClass('open');  
   });
 }
 
