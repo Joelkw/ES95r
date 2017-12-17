@@ -470,15 +470,229 @@ Crypt AI
     <p>In the “Analysis” excel document, the second “Highest growth ICOs”, includes a risk analysis of how risky each investment is. The program took into account the presence of a whitepaper, how long it had been since the ICO date, average growth percentages and had adjusted for the rise in the crypto market as a whole, basically trying to see how the coins did when they only had to go up against themselves. </p>
   </div>
 
+  </div>
 
   </div>
- 
+  <h4 class="accordion-toggle">Insights</h4>
+  <div class="accordion-content">
 
+  <div id="accordion3">
+  <h5 class="accordion-toggle1">China's Ban on ICOs Affect Outcomes</h5>
+  <div class="accordion-content1 default">
+    <p>
+    We also found that the Chinese government’s ban on ICOs had an overall negative effect on the overall amount of funding that ICOs received. For ICOs that were released before the ban, there was an overall uptick in month-by-month investment. Basically, if a project decided to ICO before the China ban date, they’d see an average of 2% more capital growth every month, but after the ban there was overall less investment in ICOs. There could be other confounding variables, but on a baseline this suggests that China is more bullish on ICOs compared to the rest of the world. The raw data for this that we based analysis on is included in the crypto_prices csv file, if interested.</p>
+    </div>
+      <h5 class="accordion-toggle1">ICO Time-Valuation Patterns</h5>
+  <div class="accordion-content1">
+    <p>
+        In regards to qualitative data, we found that successful ICOs (up until this point) have had three relevant price spikes on average - the first happens right at the point of release, which is where the first valuation happens. There is no average time-period for the second and third price spikes, they can be anywhere between months to an entire year. However, we found that some of these price spikes are correlated to dates with significant shifts in the cryptocurrency market (such as the dates when BTC jumps 24% in one day) and thus gave us inferential errors when looking at the fluctuations of market capitalization for a given ICO and the price. </p>
+    </div>
+    </div>
+  </div>
+  <h4 class="accordion-toggle">Going Forward</h4>
+  <div class="accordion-content">
+    <p> Our current neural network predictor is an LSTM that uses historical price data as the input features. Since we have our general DQN architecture built, we next plan to expand on this predictor to take in more features that might be helpful in predicting expected reward. Our current predictor performs best on hourly data, so we are also interested in modifying this predictor to better handle the volatility of 10 minutely price data.
+    </p>
+  </div>
+</div>
+    </section>
+
+<!-- 
+*****************************************************
+Algo Trading INVESTMENTS
+**************************************************** 
+-->
+<div id="Alg"></div>
+
+
+    <section id="contact"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 171.2" style="enable-background:new 0 0 100 171.2;" xml:space="preserve">
+<g transform="translate(0.000000,750.000000) scale(0.100000,-0.100000)">
+  <path d="M253.7,7486.3c-151.6-74.7-233.3-224.4-251.4-460.9c-3.2-41.5-3-726.7,0-763.9c7.5-86.3,21.9-155.7,44.5-213.7c51.4-130.6,124.4-207.8,239.3-253.2l17.8-6.8l197.9,0.5l197.9,0.7l22.8,10c98.4,42.7,167.6,112.8,214.8,217.1c34.2,75.6,52.5,154.8,60.3,260.3c3.2,42,3,700.9,0,743.1c-8.2,113.2-29.2,200.4-66,276.2c-44.1,90.4-104.6,151.6-190.9,193.4l-22.8,11H499.8H281.5L253.7,7486.3zM541.1,7263.7c52.3-15.8,85.6-58.7,101.8-131.3c11.4-51.6,11.2-43.8,11.2-488.6c0-384-0.2-418.7-3.9-444.3c-9.8-68.3-28.5-112.8-59.4-141.8c-24-22.4-52.5-32.6-92-32.6c-35.2,0-57.5,6.8-82.2,25.8c-40.9,30.8-63.2,89-69.9,182c-1.6,21.7-2.1,171.2-1.6,434.9c0.9,362.1,1.4,404.1,4.8,425.1c7.1,43.4,21,89,34.2,112.6c16.4,28.8,49.5,52.7,83.8,60.5C486.3,7270.1,523.3,7269,541.1,7263.7z"/>
+</g>
+</svg>
+      <div class="wrapper">
+        <div class="blurb">
+          <h2><strong>Algo Trading</strong></h2>
+          <h4>Tom Orton ‘19 + "Others"</h4>
+          <p class="desc">Algorithmically trading cryptocurrencies. </p>
+
+<div id="accordion-d">
+  <h4 class="accordion-toggle">Process</h4>
+  <div class="accordion-content">
+
+    <p>We looked at different approaches to algo-trading cryptocurrencies. The first stage was to get data: we coded and ran a data-logging server on the EC2 cloud which logged the minutely order book data across 17 different crypto exchanges. Next, we started an initial survey of differences between exchanges. Key findings included significantly different transaction fees (ranging from -0.1% to 1%), trading in different real currencies (USD, ZAR, CNY), differences in volatility and trading volume, and significant differences in the valuation of BTC based on exchange rates (for example, some exchanges traded BTC 10% higher than other exchanges – arbitrage trading this away is challenging, because capital needs to be moved between different real currencies, and deposited into a different bank account, for each trade). </p>
+  </div>
+  <h4 class="accordion-toggle">Build</h4>
+  <div class="accordion-content">
+    <p>We began a preliminary analysis of naive trading techniques: using nearest neighbors and linear regression to create estimators for future price changes, and trading accordingly. We found that transaction fees can make a significant difference to the level of profitability of high frequency trading algorithms.</p>
+  <p>Next we created a live paper trader to test these algorithms in real time – we found that the real time trading performance (vs performance on historical data) was much lower: this was because of small assumptions made when running the algo trader on historical data (for example, not taking into account that the bid price does not equal the ask price on the exchange). </p>
+<p>After this, we started to look at more sophisticated time series models, including VAR models and the use of recurrent neural networks. While these models would give positive return, these tests were done during the time the BTC was increasing rapidly, so it was difficult to evaluate the success of these trading algorithms relative to a realistic baseline.
+</p>
+  </div>
+  <h4 class="accordion-toggle">Insights</h4>
+  <div class="accordion-content">
+
+<div id="accordion4">
+  <h5 class="accordion-toggle1">Exchange Prices’ Interconnectedness</h5>
+  <div class="accordion-content1 default">
+    <p>
+    We also took a slight digression to look at how interconnected different exchange prices were. We did this by building a few statistical models and fitting them to the orderbook data we collected from our datalogger. In general, we found strong qualitative relationships that Biter and Bithumb strongly influence the prices on other cryptocurrency exchanges in the short term (2 minute intervals). We also saw evidence that on Biter and Bithumb, the price movement, rather than the full orderbook, was most influential in impacting price movements on other exchanges in the short term. </p>
+    </div>
+      <h5 class="accordion-toggle1">Importance of Careful Assumptions when Building Trading Algorithms</h5>
+  <div class="accordion-content1">
+    <p>A key learning experience from this is how important it is to get small details in the trading model for high frequency trading correct – otherwise the performance forecasts can be highly inaccurate. For example, assuming the historical price was the “price” affected our results when real-time trading, because we did not have the historical information of the orderbook’s bid and ask prices. </p>
+    </div>
+    </div>
 
   </div>
   <h4 class="accordion-toggle">Going Forward</h4>
   <div class="accordion-content">
-    <p>We have learned a lot and hope to continue our progress in this endeavor, but would have liked some support in our technical intelligence. We, however, understand that this is a nascent field, and are excited for what Harvard will offer in the future. 
+    <p>We want to continue testing and refining our algorithm, especially during a period when bitcoin is not increasing rapidly. Otherwise, it’s difficult to separate the effectiveness of our algorithm against the overall increase of the market, and it often also makes the most sense to just hold rather than actively trade currency during those price surges. 
+    </p>
+  </div>
+</div>
+    </section>
+
+<!-- 
+*****************************************************
+CryptoWB 
+**************************************************** 
+-->
+<div id="Alg"></div>
+
+
+    <section id="contact"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 171.2" style="enable-background:new 0 0 100 171.2;" xml:space="preserve">
+<g transform="translate(0.000000,750.000000) scale(0.100000,-0.100000)">
+  <path d="M253.7,7486.3c-151.6-74.7-233.3-224.4-251.4-460.9c-3.2-41.5-3-726.7,0-763.9c7.5-86.3,21.9-155.7,44.5-213.7c51.4-130.6,124.4-207.8,239.3-253.2l17.8-6.8l197.9,0.5l197.9,0.7l22.8,10c98.4,42.7,167.6,112.8,214.8,217.1c34.2,75.6,52.5,154.8,60.3,260.3c3.2,42,3,700.9,0,743.1c-8.2,113.2-29.2,200.4-66,276.2c-44.1,90.4-104.6,151.6-190.9,193.4l-22.8,11H499.8H281.5L253.7,7486.3zM541.1,7263.7c52.3-15.8,85.6-58.7,101.8-131.3c11.4-51.6,11.2-43.8,11.2-488.6c0-384-0.2-418.7-3.9-444.3c-9.8-68.3-28.5-112.8-59.4-141.8c-24-22.4-52.5-32.6-92-32.6c-35.2,0-57.5,6.8-82.2,25.8c-40.9,30.8-63.2,89-69.9,182c-1.6,21.7-2.1,171.2-1.6,434.9c0.9,362.1,1.4,404.1,4.8,425.1c7.1,43.4,21,89,34.2,112.6c16.4,28.8,49.5,52.7,83.8,60.5C486.3,7270.1,523.3,7269,541.1,7263.7z"/>
+</g>
+</svg>
+      <div class="wrapper">
+        <div class="blurb">
+          <h2><strong>CryptoWB</strong></h2>
+          <h4>Tony Chen ‘18, Promit Ghosh ‘18, Kenny Okagaki ‘18, Ryan Smith ‘18, Yehong Zhu ‘18</h4>
+          <p class="desc">An education platform for beginner cryptocurrency investors. <a href="http://www.cryptocurrencyexchangefund.com/">Project Website</a> </p>
+
+<div id="accordion-e">
+  <h4 class="accordion-toggle">Process</h4>
+  <div class="accordion-content">
+
+    <p>We started by identifying our group’s goal – we were all interested in investing and wanted to learn more about how to best invest our funds and where we can find more information about investing. We began by mapping out the most popular cryptoasset investments and analyzing their growth, value proposition, application, and tentative futures to see if there were any patterns amongst the cryptoassets that had grown to be the most popular. </p>
+    <p>As we moved deeper into the cryptoasset analysis, we decided to form an investment group to map out how well our newly-gotten information and instincts would fare in the cryptoasset investment market. However, upon midterm check-ins, we realized that this approach didn’t leave much lasting impact - we’d be the only ones to benefit from this type of approach. We decided to pivot to addressing a key point that had consistently come up during our research - it’s very difficult to cement the fundamentals of blockchain and set up an investing flow, so we decided to build an education platform that helped with exactly that. 
+</p>
+  </div>
+  <h4 class="accordion-toggle">Build</h4>
+  <div class="accordion-content">
+<p>We built a website, written for the complete novice, about how to invest in cryptocurrency, with the goal of making it a more accessible investing space. 
+</p>
+  </div>
+  <h4 class="accordion-toggle">Insights</h4>
+  <div class="accordion-content">
+
+<div id="accordion5">
+  <h5 class="accordion-toggle1">Good investing practices are Lacking</h5>
+  <div class="accordion-content1 default">
+    <p>
+    Given the recent hype around this market, hopeful investors may dive in and throw money at market in hopes of making a positive return. However, this is a terrible (and sometimes financially-ruining) investment strategy, and as a result making sure people who visit our site are strongly encouraged to follow good investment practices. Without these practices, it doesn’t matter how good or bad a cryptocurrency is - an investor is going to end up with a net loss.
+ </p>
+    </div>
+      <h5 class="accordion-toggle1">Accessibility to investing is a problem</h5>
+  <div class="accordion-content1">
+    <p>There’s a lot of work behind the setup to invest in the first place. You have to know what you want to invest in, as different exchanges have different topologies. There are fees and costs on all platforms - knowing when to transfer and where to purchase/sell cryptoassets is currently an art of its own. Additionally, concepts such as public and private keys, and the greater concept of setting up a wallet, as well as how to truly protect sensitive information (saving your private key in OneNote isn’t secure…) are generally new concepts to people who have no interaction with blockchain outside of their interest in investing. Addressing these needs is an important part of our investment platform.</p>
+    </div>
+    <h5 class="accordion-toggle1">Different Exchanges have Different Strengths</h5>
+  <div class="accordion-content1">
+    <p>Understanding exchange topology is an extremely important part of being a smart investor. Each exchange has its strengths, weaknesses, fees, and limitations, and knowing where to do business, when to transfer business, and how and where to make a sale all require an understanding of the major exchanges and their properties. This is an especially difficult area to tackle because these options and limitations change both based on the location from which an investor is operating and the regulations in that area regarding cryptoassets.</p>
+    </div>
+    <h5 class="accordion-toggle1">Different cryptoassets Need Different Evaluations</h5>
+  <div class="accordion-content1">
+    <p>Our group performed analyses of a large number of assets, which we tackled according to their investment popularity, as a part of our efforts to create an investment strategy before we pivoted towards an education platform. We quickly realized the vast majority of these “investments” weren’t meant to be currency in any way, shape or form. They were made for communication, computation, or otherwise resource-exchange-based phenomena when people were attempting to spectate on them like guessing which currency will gain popularity. While there is meaning in value - after all, if any one of these networks are utilized for their purpose, the tokens will increase in value as demand for them increases - the way the assets are prospected and understood aren’t always correct. Understanding the purpose of an asset and how to value it is an important part of entering the cryptoasset investment market.</p>
+    </div>
+    <h5 class="accordion-toggle1">There’s No Central New Entry Point</h5>
+  <div class="accordion-content1">
+    <p>We’d like to see more acknowledgement of the potential of blockchain (and its evolutions like Iota’s Tangle) for future technology. While blockchain is not an universal solution to every existing technology problem out there, it is very useful in democratizing and decentralizing many existing industries, and thus inherently disruptive to any industry that it can be applied to. Blockchain will definitely play a big role in the future of the digital age. We missed the mark with the boom of the internet - let’s not repeat mistakes.</p>
+    </div>
+    </div>
+
+  </div>
+  <h4 class="accordion-toggle">Going Forward</h4>
+  <div class="accordion-content">
+    <p>We want to continue testing and refining our algorithm, especially during a period when bitcoin is not increasing rapidly. Otherwise, it’s difficult to separate the effectiveness of our algorithm against the overall increase of the market, and it often also makes the most sense to just hold rather than actively trade currency during those price surges. 
+    </p>
+  </div>
+</div>
+    </section>
+
+
+
+
+<!-- 
+*****************************************************
+VALUATION GURUS 
+**************************************************** 
+-->
+<div id="Val"></div>
+
+
+    <section id="contact"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 171.2" style="enable-background:new 0 0 100 171.2;" xml:space="preserve">
+<g transform="translate(0.000000,750.000000) scale(0.100000,-0.100000)">
+  <path d="M253.7,7486.3c-151.6-74.7-233.3-224.4-251.4-460.9c-3.2-41.5-3-726.7,0-763.9c7.5-86.3,21.9-155.7,44.5-213.7c51.4-130.6,124.4-207.8,239.3-253.2l17.8-6.8l197.9,0.5l197.9,0.7l22.8,10c98.4,42.7,167.6,112.8,214.8,217.1c34.2,75.6,52.5,154.8,60.3,260.3c3.2,42,3,700.9,0,743.1c-8.2,113.2-29.2,200.4-66,276.2c-44.1,90.4-104.6,151.6-190.9,193.4l-22.8,11H499.8H281.5L253.7,7486.3zM541.1,7263.7c52.3-15.8,85.6-58.7,101.8-131.3c11.4-51.6,11.2-43.8,11.2-488.6c0-384-0.2-418.7-3.9-444.3c-9.8-68.3-28.5-112.8-59.4-141.8c-24-22.4-52.5-32.6-92-32.6c-35.2,0-57.5,6.8-82.2,25.8c-40.9,30.8-63.2,89-69.9,182c-1.6,21.7-2.1,171.2-1.6,434.9c0.9,362.1,1.4,404.1,4.8,425.1c7.1,43.4,21,89,34.2,112.6c16.4,28.8,49.5,52.7,83.8,60.5C486.3,7270.1,523.3,7269,541.1,7263.7z"/>
+</g>
+</svg>
+      <div class="wrapper">
+        <div class="blurb">
+          <h2><strong>Valuation Gurus</strong></h2>
+          <h4>Nisha Swarup ‘18 and Colton Gyulay ’15-’18</h4>
+          <p class="desc">Creating a better cryptoasset valuation system.<a href="https://www.cointheory.io/">Project Website</a> </p>
+
+<div id="accordion-f">
+  <h4 class="accordion-toggle">Process</h4>
+  <div class="accordion-content">
+<p>Our group began this semester with some exposure to blockchain and cryptocurrency but little formal technical training in the space. Initially, we sought to focus on smart contracts and applications; in this vein, we set out to learn smart contract programming with Solidity on the Ethereum blockchain. We quickly realized that we would be more interested in studying the space at a higher level and developing a better understanding of the crypto landscape in terms of coin valuations and typologies. This motivation was in part spurred by the guest speaker and current HBS student Homan Mohammadi, who has spent the last few years studying the space more in depth.</p>
+<p>
+After a few meetings, we began working closer with Homan on a few key areas: 1) establishing a more fundamental approach to cryptoasset valuations, and 2) developing a typology for the different kinds of coins being made available. There is immense opportunity in applying traditional economic and financial thinking to the cryptoasset space, and the dearth of research in this nascent field makes the opportunity relatively accessible.</p>
+</div>
+
+  <h4 class="accordion-toggle">Build</h4>
+  <div class="accordion-content">
+ <p>We focused on building a better metric, by evaluating a metric called NVT (Network Value to Transactions Ratio) that is analogous to the PE ratio for a stock. The PE ratio represents a ratio of price to “health” of a given financial instrument, where health for stocks is calculated as the company’s earnings. For a cryptoasset like bitcoin, “health” can be thought of as network transaction volume. If people are using Bitcoin for more of their transactions, this justifies a higher price. 
+</p><p>The fundamental value of a cryptoasset like Bitcoin can be thought of as either a medium of exchange or a store of value. 
+Some of the ways in which we considered refining the NVT metric were: using circulated supply vs total supply of coins; and changing how we represented transactions (to avoid overcounting in cases where the transaction was represented as going to two addresses).
+</p>
+  </div>
+
+
+  <h4 class="accordion-toggle">Insights</h4>
+  <div class="accordion-content">
+
+  <div id="accordion6">
+ 
+  <h5 class="accordion-toggle1">Finance Parallels Do Exist</h5>
+  <div class="accordion-content1 default">
+    <p>
+   Traditional finance theory has relevance to the world of cryptoassets. We were able to leverage research in stock valuation (like the idea of the PE ratio) and portfolio rebalancing (the idea of dynamic resizing) when completing our project. One main metric we examined in this regard was NVT. A high NVT indicates that a cryptoasset's on-chain transaction volume is valued more highly. This generally means that the network is experiencing rapid growth and its future returns are valued more highly by the market, or that there is a potential bubble in price if this increased valuation is unsupported. Our project partially tried to better separate these situations through better analysis of transaction activity and fundamental drivers. NVT is calculated by the network value (total market capitalization) divided by the transaction volume (in dollars) on the blockchain. The transaction volume is only an estimate derived from activity seen on blockchains.
+   </p>
+    </div>
+      
+      <h5 class="accordion-toggle1">A Need for Cryptoasset Type Definitions</h5>
+  <div class="accordion-content1">
+    <p>There is currently no clear consensus on exactly how cryptoassets differ from other kinds of assets. Over the course of the semester, we read many different kinds of blogs and books on cryptoasset valuation, and found lots of diversity in how the crypto community is thinking about these problems. Since it is such a nascent space, there is opportunity for students to be part of shaping the theory of valuation, even through data collection or analysis. There is solid research establishing cryptocurrencies as a separate asset class from existing classes, but within this specific asset class there are also distinctions to be made. </p>
+    </div>
+    
+    <h5 class="accordion-toggle1">Three Types of Crytpoassets: Cryptocurrencies, Cryptoutilities, Cryptosecurities</h5>
+ <div class="accordion-content1">
+<p>Cryptocurrencies are the most similar to existing currencies/commodities and can act as either a store of value or medium of exchange. Though many subdistinctions can be made within this group, such currencies might include Bitcoin, Ether, Litecoin, or Monero. </p>
+<p>
+Cryptoutilities comprise tokens and other applications which provide a service and for which valuations are based off the value of the future network. Such utilities might include Augur, Gnosis, Siacoin, or Golem. </p>
+<p>
+Finally, cryptosecurities are a class of coins that essentially provide liquidity and transparency to an existing asset or asset class. Such securities might be venture capital or real estate investment funds, where value is driven by underlying assets. These behave like traditional securities, albeit with non-traditional fundraising mechanisms.
+</p>
+   </div>
+
+</div>
+</div>
+  <h4 class="accordion-toggle">Going Forward</h4>
+  <div class="accordion-content">
+    <p>We see considerable opportunity for Harvard academics to weigh in on some of the valuation techniques and economic implications of the technology. As discussed, the emerging nature of this field of research provides an opportunity for newcomers to quickly get up to speed and to bring along interdisciplinary insights that can positively affect the space.
     </p>
   </div>
 </div>
@@ -619,7 +833,70 @@ for (i = 0; i < acc.length; i++) {
       $(".accordion-content").not($(this).next()).slideUp('fast');
 
     });
+    $('#accordion-d').find('.accordion-toggle').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".accordion-content").not($(this).next()).slideUp('fast');
+
+    });
+    $('#accordion-e').find('.accordion-toggle').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".accordion-content").not($(this).next()).slideUp('fast');
+
+    });
+        $('#accordion-f').find('.accordion-toggle').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".accordion-content").not($(this).next()).slideUp('fast');
+
+    });
     $('#accordion2').find('.accordion-toggle1').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".accordion-content1").not($(this).next()).slideUp('fast');
+
+    });
+    $('#accordion3').find('.accordion-toggle1').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".accordion-content1").not($(this).next()).slideUp('fast');
+
+    });
+     $('#accordion4').find('.accordion-toggle1').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".accordion-content1").not($(this).next()).slideUp('fast');
+
+    });
+     $('#accordion5').find('.accordion-toggle1').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".accordion-content1").not($(this).next()).slideUp('fast');
+
+    });
+      $('#accordion6').find('.accordion-toggle1').click(function(){
 
       //Expand or collapse this panel
       $(this).next().slideToggle('fast');
