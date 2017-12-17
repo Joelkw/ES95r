@@ -20,12 +20,29 @@ FIRST SECTION
 **************************************************** 
 -->
     <section id="hero">
- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 163.5" style="enable-background:new 0 0 100 163.5;" xml:space="preserve">
+      <style>
+      #hero .photographer {
+        position: absolute;
+        margin-left: 250px;
+        /*padding-top: 150px;*/
+        opacity: 0.05;
+      }
+      #hero .photographer2 {
+        position: absolute;
+        margin-left: 460px;
+        margin-top: 200px;
+        /*padding-top: 150px;*/
+        opacity: 0.05;
+      }
+    </style>
+       <div class="photographer"><img src="assets/img/qrc.png" alt="Photographer"></div>
+       <div class="photographer2"><img src="assets/img/qrc.png" alt="Photographer"></div>
+ <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 163.5" style="enable-background:new 0 0 100 163.5;" xml:space="preserve">
 <g transform="translate(0.000000,749.000000) scale(0.100000,-0.100000)">
   <path d="M65.5664062,34.2070312 C107.597656,89.0507812 144.421875,12.2773438 144.421875,12.2773438 L154.886719,159.097656 L21.2265625,124.054687 L305.042969,116.410156 L33.0390625,116.410156 L173.6875,62.21875 L182.371094,177.550781 L111.15625,69.1640625" id="Path-4" stroke="#000000" stroke-width="6"></path>
-	<!-- <path d="M352.5,7487.4C351.4,7484.3,0,5858.4,0,5856.4c0-0.7,74-0.9,164.1-0.7l164.3,0.7l31.6,174.6l31.6,174.6h106.9h106.9l24.4-127.7c13.5-70.3,28.6-149.1,33.6-175l9.2-47.6h163.5H1000l-1.1,4.8c-2.8,11.1-350.7,1626.1-350.7,1627.9c0,1.1-61.1,2-147.3,2C384.8,7490,353.1,7489.3,352.5,7487.4z M542.3,6713.5c22.3-163.5,40.4-298.8,40.4-300.5c0-2.8-10.7-3.3-84-3.3h-84.2l1.3,7.2c2.2,12.7,84,590.8,84,593.4C499.8,7022.7,507,6971.7,542.3,6713.5z"/> -->
+	<path d="M352.5,7487.4C351.4,7484.3,0,5858.4,0,5856.4c0-0.7,74-0.9,164.1-0.7l164.3,0.7l31.6,174.6l31.6,174.6h106.9h106.9l24.4-127.7c13.5-70.3,28.6-149.1,33.6-175l9.2-47.6h163.5H1000l-1.1,4.8c-2.8,11.1-350.7,1626.1-350.7,1627.9c0,1.1-61.1,2-147.3,2C384.8,7490,353.1,7489.3,352.5,7487.4z M542.3,6713.5c22.3-163.5,40.4-298.8,40.4-300.5c0-2.8-10.7-3.3-84-3.3h-84.2l1.3,7.2c2.2,12.7,84,590.8,84,593.4C499.8,7022.7,507,6971.7,542.3,6713.5z"/>
 </g>
-</svg> 
+</svg>  -->
 <style>
  #hero header {
    height: 10px;
@@ -61,7 +78,16 @@ FIRST SECTION
              <li><a href="#conclusion">Conclusion</a></li>
         </ul>
       </header>
+      <!-- <style>
+      #hero .photographer {
+        float:right;
+        max-width: 400px;
+      }
+    </style> -->
+     
+
       <div class="wrapper">
+
         <div class="welcome">
           <h1><strong>ES95r:Blockchain</strong> Inaugural, Fall 2017</h1>
           <p>Some think Blockchain is just digital money. Some think Blockchain will be as transformational as the internet. And some think Blockchain is overhyped. But as time has passed, the skeptics have gotten quieter.</p>
@@ -69,15 +95,18 @@ FIRST SECTION
 <p>Blockchain technology is best known for its underlying role in enabling Bitcoin, a cryptocurrency that went from less than <strong>$0.018</strong> per coin in 2010 to above <strong>$18,000</strong> per coin in 2017. A blockchain itself, however, is use-case agnostic: it’s a protocol that allows decentralized trust in tracking transactions, in a sort of open-ledger system where everyone is guaranteed to have an immutable, up-to-date copy of the chain of digital “blocks” detailing all of the network actions.</p>
 
 
-<p><strong>In the simplest terms, a blockchain</strong>is true to its namesake: it’s a list, or chain, of groups of data records, or blocks, that grows as more and more data is added to the system. It differs from a traditional database in two key ways: (1) once a block has been added to the chain, it cannot be changed, and (2) thanks to cryptographic advancements, a blockchain can be widely distributed on any network of computers. This means everyone can see copy that they know is up-to-date and trust the information encoded, requiring no central party or single server host. More importantly, it also means that anyone can use the blockchain to interact. </p>
+<p><strong>In the simplest terms, a blockchain</strong> is true to its namesake: it’s a list, or chain, of groups of data records, or blocks, that grows as more and more data is added to the system. It differs from a traditional database in two key ways: (1) once a block has been added to the chain, it cannot be changed, and (2) thanks to cryptographic advancements, a blockchain can be widely distributed on any network of computers. This means everyone can see copy that they know is up-to-date and trust the information encoded, requiring no central party or single server host. More importantly, it also means that anyone can use the blockchain to interact. </p>
 
 
 <p>Blockchain is a technology that people say will change the world. But beyond currency, nobody is yet certain on what the biggest new uses will be. All anyone knows is that to discover them, smart, hardworking people will have to do a lot of experimenting, prototyping, and educated guessing. And that’s exactly what the students of ES95r’s Blockchain section do best. 
 
 </p>
         </div>
-        <div class="photographer"><img src="assets/img/hero.png" alt="Photographer"></div>
-      </div>
+        <div class="code1">
+
+  </svg>
+</div>
+ </div>
     </section>
 
 
@@ -86,13 +115,33 @@ FIRST SECTION
 WHY BLOCKCHAIN
 **************************************************** 
 -->
-    <section id="about"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 203.6" style="enable-background:new 0 0 100 203.6;" xml:space="preserve">
+    <section id="about">
+
+ <style>
+       .photographer {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 20px;
+        /*padding-top: 150px;*/
+        opacity: 0.5;
+      }
+      .photographer2 {
+        position: absolute;
+        margin-left: 460px;
+        margin-top: 200px;
+        /*padding-top: 150px;*/
+        opacity: 0.05;
+      }
+    </style>
+       <div class="photographer"><img src="assets/img/why.png" alt="Photographer"></div>
+<!--        <div class="photographer2"><img src="assets/img/.png" alt="Photographer"></div>
+ -->     <!--  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 203.6" style="enable-background:new 0 0 100 203.6;" xml:space="preserve">
 <g transform="translate(0.000000,749.000000) scale(0.100000,-0.100000)">
 	<path d="M0,6471.9V5454.2h206.5h206.5v436.2v436.2h7.6c19.8,0.3,107.9,5.7,128.3,8.2c90.2,10.9,154.9,29.4,220.4,62.8c141.1,72.6,213.3,213.3,228.3,444.1c8.7,135.3-7.3,272.3-42.9,368.3c-48.6,130.5-131,212.8-253.8,253.8c-15.5,5.2-43.5,12.8-62.2,17.1l-34,7.3l-302.2,0.8L0,7490V6471.9z M490.5,7190.8c51.1-13.6,71.2-28.8,92.9-69.8c22.3-41.9,26.4-81.5,24.7-243.2l-1.4-115l-8.4-32.1c-10.9-40.5-13.6-45.4-35.6-67.9c-21.2-22-30.7-27.4-60.6-34.5c-18.8-4.3-68.2-10.9-82.6-10.9c-3.3,0-3.8,44-3.8,291.1v291.3l26.6-1.6C456.8,7197.3,478.6,7194,490.5,7190.8z"/>
 </g>
-</svg>
+</svg> -->
       <div class="wrapper">
-        <div class="camera"><img src="assets/img/camera.png" alt="Camera"></div>
+        <div class="camera"><img src="assets/img/nodes.png" alt="network-nodes"></div>
         <div class="blurb">
           <h2><strong>Why</strong> Blockchain?</h2>
           <p>Though high potential, Blockchain technology, first created in 2008, is still relatively new to a tech world that took twenty years to warm up to the internet and another ten to finally use it to fundamentally change society. Nonetheless, Fortune 500 companies like <a href="http://www.nasdaq.com/article/how-stock-exchanges-are-experimenting-with-blockchain-technology-cm801802">NASDAQ</a> and <a href="https://www.libertymutualgroup.com/about-liberty-mutual-site/news-site/Pages/Liberty-Mutual-and-Blockchain.aspx">Liberty Mutual</a>, national governments of countries like <a href="https://uk.reuters.com/article/us-sweden-blockchain/sweden-tests-blockchain-technology-for-land-registry-idUKKCN0Z22KV">Sweden</a> and <a href="https://www.coindesk.com/russias-government-test-blockchain-land-registry-system/">Russia</a>, and universities like<a href="http://blockchain.mit.edu/">MIT</a> and  <a href="http://scet.berkeley.edu/blockchain-lab/">Berkeley</a> are already experimenting with Blockchain.</p>
@@ -110,11 +159,22 @@ WHY BLOCKCHAIN
 WHO WE ARE
 **************************************************** 
 -->
-     <section id="featured" style="height:1100px;"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 248.8" style="enable-background:new 0 0 100 248.8;" xml:space="preserve">
+     <section id="featured" style="height:1100px;">
+
+     <style>
+       .photographer {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 20px;
+        /*padding-top: 150px;*/
+        opacity: 0.5;
+      }
+    </style>
+       <div class="photographer"><img src="assets/img/WHO.png" alt="Photographer"></div><!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 248.8" style="enable-background:new 0 0 100 248.8;" xml:space="preserve">
 <g transform="translate(0.000000,749.000000) scale(0.100000,-0.100000)">
   <path d="M0,6245.8V5001.6h500h500V5176v174.4H752.5H505v1069.8V7490H252.5H0V6245.8z"/>
 </g>
-</svg>
+</svg> -->
       <div class="wrapper">
         <div class="blurb">
           <h2><strong>Who</strong> We Are</h2>
@@ -125,7 +185,12 @@ WHO WE ARE
 <p>Though the stereotypical “Blockchain enthusiast” is a Silicon Valley-type techie, the students of ES95r drew a diverse set of Harvard students [NOTE: should we address the lack of diversity, especially on gender lines, in the class? I think so -- we can put it in a “why a real class / expanding the space at Harvard / making it accessible is important” section]. We were philosophers and computer scientists, applied mathematicians and mechanical engineers, economists and VES concentrators. We were varsity lacrosse players and entrepreneurs, writers and music producers, designers and stand-up comedians. And we were west coast cool and east coast cold, internationals and gap-year takers, from the quad, river, and off-campus alike. If anything, the numerous interests and backgrounds of the students should illustrate that slowly but surely, everyone, in every different sector, is starting to pay attention to Blockchain. 
 </p>
         </div>
-        <div class="featured"><img src="assets/img/featured.jpg" alt="Featured"></div>
+        <style>
+        .featured {
+          opacity: 0.5;
+        }
+      </style>
+        <div class="featured"><img src="assets/img/class_s.png" alt="Featured"></div>
       </div>
     </section>
 
@@ -136,11 +201,21 @@ SPEAKERS
 **************************************************** 
 -->
 <div id="speakers"></div>
-    <section id="about" style="height:1000px"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 203.6" style="enable-background:new 0 0 100 203.6;" xml:space="preserve">
+    <section id="about" style="height:1000px">
+    <style>
+       .photographer {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 20px;
+        /*padding-top: 150px;*/
+        opacity: 0.5;
+      }
+    </style>
+       <div class="photographer"><img src="assets/img/SPEAKERS_180.png" alt="Photographer"></div><!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 203.6" style="enable-background:new 0 0 100 203.6;" xml:space="preserve">
 <g transform="translate(0.000000,749.000000) scale(0.100000,-0.100000)">
   <path d="M0,6471.9V5454.2h206.5h206.5v436.2v436.2h7.6c19.8,0.3,107.9,5.7,128.3,8.2c90.2,10.9,154.9,29.4,220.4,62.8c141.1,72.6,213.3,213.3,228.3,444.1c8.7,135.3-7.3,272.3-42.9,368.3c-48.6,130.5-131,212.8-253.8,253.8c-15.5,5.2-43.5,12.8-62.2,17.1l-34,7.3l-302.2,0.8L0,7490V6471.9z M490.5,7190.8c51.1-13.6,71.2-28.8,92.9-69.8c22.3-41.9,26.4-81.5,24.7-243.2l-1.4-115l-8.4-32.1c-10.9-40.5-13.6-45.4-35.6-67.9c-21.2-22-30.7-27.4-60.6-34.5c-18.8-4.3-68.2-10.9-82.6-10.9c-3.3,0-3.8,44-3.8,291.1v291.3l26.6-1.6C456.8,7197.3,478.6,7194,490.5,7190.8z"/>
 </g>
-</svg>
+</svg> -->
       <div class="wrapper">
 <!--         <div class="camera"><img src="assets/img/camera.png" alt="Camera"></div>
  -->        <div class="blurb" style="width:100%;text-align:center;">
@@ -279,7 +354,25 @@ BITS TEAM PAGE
 <div id="Bits"></div>
 
 
-    <section id="contact"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 171.2" style="enable-background:new 0 0 100 171.2;" xml:space="preserve">
+    <section id="contact">
+    <!--  <style>
+       .photographer {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 20px;
+        /*padding-top: 150px;*/
+        opacity: 0.5;
+      }
+      .photographer2 {
+        position: absolute;
+        margin-left: 460px;
+        margin-top: 200px;
+        /*padding-top: 150px;*/
+        opacity: 0.05;
+      }
+    </style>
+       <div class="photographer"><img src="assets/img/links_wd.png" alt="Photographer"></div> -->
+       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 171.2" style="enable-background:new 0 0 100 171.2;" xml:space="preserve">
 <g transform="translate(0.000000,750.000000) scale(0.100000,-0.100000)">
   <path d="M253.7,7486.3c-151.6-74.7-233.3-224.4-251.4-460.9c-3.2-41.5-3-726.7,0-763.9c7.5-86.3,21.9-155.7,44.5-213.7c51.4-130.6,124.4-207.8,239.3-253.2l17.8-6.8l197.9,0.5l197.9,0.7l22.8,10c98.4,42.7,167.6,112.8,214.8,217.1c34.2,75.6,52.5,154.8,60.3,260.3c3.2,42,3,700.9,0,743.1c-8.2,113.2-29.2,200.4-66,276.2c-44.1,90.4-104.6,151.6-190.9,193.4l-22.8,11H499.8H281.5L253.7,7486.3zM541.1,7263.7c52.3-15.8,85.6-58.7,101.8-131.3c11.4-51.6,11.2-43.8,11.2-488.6c0-384-0.2-418.7-3.9-444.3c-9.8-68.3-28.5-112.8-59.4-141.8c-24-22.4-52.5-32.6-92-32.6c-35.2,0-57.5,6.8-82.2,25.8c-40.9,30.8-63.2,89-69.9,182c-1.6,21.7-2.1,171.2-1.6,434.9c0.9,362.1,1.4,404.1,4.8,425.1c7.1,43.4,21,89,34.2,112.6c16.4,28.8,49.5,52.7,83.8,60.5C486.3,7270.1,523.3,7269,541.1,7263.7z"/>
 </g>
@@ -370,7 +463,25 @@ LOGISTIC NETWORK
 <div id="Log"></div>
 
 
-    <section id="contact"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 171.2" style="enable-background:new 0 0 100 171.2;" xml:space="preserve">
+    <section id="contact">
+    <!--  <style>
+       .photographerr {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-top: -300px;
+        /*padding-top: 150px;*/
+        opacity: 0.5;
+      }
+      .photographer2 {
+        position: absolute;
+        margin-left: 460px;
+        margin-top: 200px;
+        /*padding-top: 150px;*/
+        opacity: 0.05;
+      }
+    </style>
+       <div class="photographerr"><img src="assets/img/links_rd.png" alt="Photographer"></div> --> <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 171.2" style="enable-background:new 0 0 100 171.2;" xml:space="preserve">
 <g transform="translate(0.000000,750.000000) scale(0.100000,-0.100000)">
   <path d="M253.7,7486.3c-151.6-74.7-233.3-224.4-251.4-460.9c-3.2-41.5-3-726.7,0-763.9c7.5-86.3,21.9-155.7,44.5-213.7c51.4-130.6,124.4-207.8,239.3-253.2l17.8-6.8l197.9,0.5l197.9,0.7l22.8,10c98.4,42.7,167.6,112.8,214.8,217.1c34.2,75.6,52.5,154.8,60.3,260.3c3.2,42,3,700.9,0,743.1c-8.2,113.2-29.2,200.4-66,276.2c-44.1,90.4-104.6,151.6-190.9,193.4l-22.8,11H499.8H281.5L253.7,7486.3zM541.1,7263.7c52.3-15.8,85.6-58.7,101.8-131.3c11.4-51.6,11.2-43.8,11.2-488.6c0-384-0.2-418.7-3.9-444.3c-9.8-68.3-28.5-112.8-59.4-141.8c-24-22.4-52.5-32.6-92-32.6c-35.2,0-57.5,6.8-82.2,25.8c-40.9,30.8-63.2,89-69.9,182c-1.6,21.7-2.1,171.2-1.6,434.9c0.9,362.1,1.4,404.1,4.8,425.1c7.1,43.4,21,89,34.2,112.6c16.4,28.8,49.5,52.7,83.8,60.5C486.3,7270.1,523.3,7269,541.1,7263.7z"/>
 </g>
@@ -411,7 +522,7 @@ LOGISTIC NETWORK
 *****************************************************
 FRONTIER INVESTMENTS
 **************************************************** 
--->
+
 <div id="Fro"></div>
 
 
@@ -737,11 +848,21 @@ COMPETITIVE ANALYSIS
 -->
 <div id="universities"></div>
 <div id="speakers"></div>
-    <section id="about" style="height:1200px"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 203.6" style="enable-background:new 0 0 100 203.6;" xml:space="preserve">
+    <section id="about" style="height:1200px">
+     <style>
+       .photographer {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 20px;
+        /*padding-top: 150px;*/
+        opacity: 0.5;
+      }
+    </style>
+       <div class="photographer"><img src="assets/img/UNIVERSITIES_180.png" alt="Photographer"></div><!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 203.6" style="enable-background:new 0 0 100 203.6;" xml:space="preserve">
 <g transform="translate(0.000000,749.000000) scale(0.100000,-0.100000)">
   <path d="M0,6471.9V5454.2h206.5h206.5v436.2v436.2h7.6c19.8,0.3,107.9,5.7,128.3,8.2c90.2,10.9,154.9,29.4,220.4,62.8c141.1,72.6,213.3,213.3,228.3,444.1c8.7,135.3-7.3,272.3-42.9,368.3c-48.6,130.5-131,212.8-253.8,253.8c-15.5,5.2-43.5,12.8-62.2,17.1l-34,7.3l-302.2,0.8L0,7490V6471.9z M490.5,7190.8c51.1-13.6,71.2-28.8,92.9-69.8c22.3-41.9,26.4-81.5,24.7-243.2l-1.4-115l-8.4-32.1c-10.9-40.5-13.6-45.4-35.6-67.9c-21.2-22-30.7-27.4-60.6-34.5c-18.8-4.3-68.2-10.9-82.6-10.9c-3.3,0-3.8,44-3.8,291.1v291.3l26.6-1.6C456.8,7197.3,478.6,7194,490.5,7190.8z"/>
 </g>
-</svg>
+</svg> -->
       <div class="wrapper">
 <!--         <div class="camera"><img src="assets/img/camera.png" alt="Camera"></div>
  -->        <div class="blurb" style="width:100%;text-align:center;">
@@ -861,11 +982,22 @@ WHAT HARVARD CAN DO NEXT
 **************************************************** 
 -->
 <div id="donext"></div>
-     <section id="featured" style="height=800px;"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 248.8" style="enable-background:new 0 0 100 248.8;" xml:space="preserve">
+     <section id="featured" style="height=850px;">
+        <style>
+       .photographer {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 20px;
+        /*padding-top: 150px;*/
+        opacity: 0.5;
+      }
+    </style>
+       <div class="photographer"><img src="assets/img/NEXT.png" alt="Photographer"></div>
+     <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 248.8" style="enable-background:new 0 0 100 248.8;" xml:space="preserve">
 <g transform="translate(0.000000,749.000000) scale(0.100000,-0.100000)">
   <path d="M0,6245.8V5001.6h500h500V5176v174.4H752.5H505v1069.8V7490H252.5H0V6245.8z"/>
 </g>
-</svg>
+</svg> -->
       <div class="wrapper">
         <div class="blurb">
           <h2>What Harvard Can Do <strong>Next</strong></h2>
@@ -888,7 +1020,12 @@ WHAT HARVARD CAN DO NEXT
             <li>A blockchain summer research fellowship</li>
           </ul></p>
         </div>
-        <div class="featured"><img src="assets/img/featured.jpg" alt="Featured"></div>
+        <style>
+        .featured2 {
+          max-height: 450px;
+        }
+      </style>
+        <div class="featured featured2"><img src="assets/img/links.png" alt="Featured"></div>
       </div>
     </section>
 
@@ -959,13 +1096,26 @@ CONCLUSION
 }
 </style>
 <div id="conclusion"></div>
-    <section id="about" style="height:1200px;"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 203.6" style="enable-background:new 0 0 100 203.6;" xml:space="preserve">
+    <section id="about" style="height:1200px;">
+
+         <style>
+       .photographer {
+        position: absolute;
+        margin-left: 20px;
+        margin-top: 20px;
+        /*padding-top: 150px;*/
+        opacity: 0.5;
+      }
+    </style>
+       <div class="photographer"><img src="assets/img/FUTURE.png" alt="Photographer"></div>
+
+       <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 203.6" style="enable-background:new 0 0 100 203.6;" xml:space="preserve">
 <g transform="translate(0.000000,749.000000) scale(0.100000,-0.100000)">
   <path d="M0,6471.9V5454.2h206.5h206.5v436.2v436.2h7.6c19.8,0.3,107.9,5.7,128.3,8.2c90.2,10.9,154.9,29.4,220.4,62.8c141.1,72.6,213.3,213.3,228.3,444.1c8.7,135.3-7.3,272.3-42.9,368.3c-48.6,130.5-131,212.8-253.8,253.8c-15.5,5.2-43.5,12.8-62.2,17.1l-34,7.3l-302.2,0.8L0,7490V6471.9z M490.5,7190.8c51.1-13.6,71.2-28.8,92.9-69.8c22.3-41.9,26.4-81.5,24.7-243.2l-1.4-115l-8.4-32.1c-10.9-40.5-13.6-45.4-35.6-67.9c-21.2-22-30.7-27.4-60.6-34.5c-18.8-4.3-68.2-10.9-82.6-10.9c-3.3,0-3.8,44-3.8,291.1v291.3l26.6-1.6C456.8,7197.3,478.6,7194,490.5,7190.8z"/>
 </g>
-</svg>
+</svg> -->
       <div class="wrapper">
-        <div class="camera"><img src="assets/img/camera.png" alt="Camera"></div>
+        <div class="camera"><img src="assets/img/nodes.png" alt="Camera"></div>
         <div class="blurb">
           <h2>The <strong>Future</strong> of Blockchain at Harvard?</h2>
         
